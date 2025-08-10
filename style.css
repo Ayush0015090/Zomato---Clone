@@ -1,0 +1,530 @@
+/* Import Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ff4d4d;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffe5e5;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../img/bg.png') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+.hero-content input {
+    padding: 12px 20px;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Section */
+.info {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.info h2 {
+    font-size: 2rem;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+.info p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+.feature-box p {
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .hero-content input {
+        width: 90%;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 90%;
+    }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .feature-box {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #eee;
+}
+
+body.dark-mode .info {
+    background-color: #222;
+    color: #ddd;
+}
+
+body.dark-mode input[type="text"] {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode .feature-box h3,
+body.dark-mode .info h2 {
+    color: #ff9999;
+}
+
+/* ───────────── DARK MODE TOGGLE BUTTON ───────────── */
+
+.dark-toggle {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: #222;
+    border: 2px solid #ff4d4d;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 8px #ff4d4d, 0 0 16px #ff4d4d33;
+}
+
+.dark-toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .dark-toggle {
+    background-color: #000;
+    border-color: #ff9999;
+    box-shadow: 0 0 8px #ff9999, 0 0 16px #ff999944;
+}
+
+body.dark-mode .dark-toggle::before {
+    transform: translateX(24px);
+    background-color: #ff9999;
+}
+
+/* ───────────── TOGGLE LABEL ───────────── */
+.dark-mode-label {
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    width: fit-content;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+body.dark-mode .dark-mode-label {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+/* ======================
+   Footer Styling (Zomato)
+====================== */
+.zomato-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer-links > div {
+  flex: 1;
+  min-width: 160px;
+  margin: 15px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-links p {
+  margin: 5px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+  /* Remove the filter */
+}
+
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center; /* or space-between, or flex-start */
+  gap: 10px; /* adds spacing between the buttons */
+  margin-top: 10px;
+}
+
+.store-btn {
+  height: 40px;
+  cursor: pointer;
+  display: block;
+}
+
+
+.footer-bottom-text {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  color: #aaa;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 30px 0 15px;
+}
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: white;
+  margin: 20px 0;
+  width: 100%;
+  opacity: 0.2; /* optional: softens the line */
+}
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 40px auto;
+  max-width: 900px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 10px 20px;
+  border-right: 1px solid #eee;
+  gap: 10px;
+}
+
+.stat-box:last-child {
+  border-right: none;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.stat-text h2 {
+  font-size: 30px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.stat-text p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+.app-download-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff5f5;
+  padding: 40px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+
+.app-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.app-text h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.app-text p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.store-buttons a img {
+  width: 140px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.app-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-banner-container {
+  position: relative;
+  width: 250px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.banner-img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.qr-img {
+  position: absolute;
+  top: 70%;  /* Adjust based on your banner image */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;  /* Adjust as needed */
+  border-radius: 12px;
+}
+.qr-text {
+  position: absolute;
+  top: 30%;  /* Adjust this to position it above the QR */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+}
+/* Ensure footer stretches full width */
+.footer {
+  width: 100%;
+  background-color: #000; /* solid black */
+  color: #fff;
+  padding: 40px 0 0;
+  margin-top: 40px;
+}
+
+/* Remove parent padding/margin if any */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* This prevents the white margin around footer */
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-wrapper {
+  width: 100%;
+  background-color: #000;
+}
+
